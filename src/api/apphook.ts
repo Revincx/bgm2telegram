@@ -4,33 +4,34 @@ import { pushMessage } from "../utils/bot";
 import { genFullMessage } from "../utils/text";
 
 export default async function (req: VercelRequest, res: VercelResponse) {
-
   let webhook_body = req.body as WebHookCollection;
 
-  if(req.method != 'POST') {
-    return res.status(405).send('Method Not Allowed')
+  if (req.method != "POST") {
+    return res.status(405).send("Method Not Allowed");
   }
 
   if (webhook_body.type != "collection") {
     return res.send({
       ok: true,
       pushed: false,
-      message: "Not accept collection webhook",
+      message: "Only accept collection webhook for now.",
     });
   }
 
-  let message = await pushMessage(genFullMessage(webhook_body));
+  try {
+    let message = await pushMessage(genFullMessage(webhook_body));
 
-  if (message.message_id) {
+    if (message.message_id) {
+      return res.send({
+        ok: true,
+        pushed: true,
+      });
+    }
+  } catch (err) {
     return res.send({
       ok: true,
-      pushed: true,
+      pushed: false,
+      message: "Push failed: " + err,
     });
   }
-
-  return res.send({
-    ok: true,
-    pushed: false,
-    message: "Push failed",
-  });
 }
