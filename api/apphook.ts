@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { WebHookCollection } from "../types/WebhookCollection";
 import { pushMessage } from "../utils/bot";
+import env from "../utils/env";
 import { genFullMessage } from "../utils/text";
 
 export default async function (req: VercelRequest, res: VercelResponse) {
@@ -13,7 +14,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     })
   }
 
-  if(req.query.key != process.env.AUTH_KEY) {
+  if(req.query.key != env.AUTH_KEY) {
     return res.status(401).send({
       ok: false,
       message: "Request Unauthorized."
