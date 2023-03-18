@@ -29,7 +29,7 @@
 
 点击下方的按钮即可一键部署到 Vercel。
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FRevincx%2Fbgm2telegram&env=BOT_TOKEN,PUSH_CHANNEL)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FRevincx%2Fbgm2telegram&env=BOT_TOKEN,PUSH_CHANNEL,AUTH_KEY)
 
 ---
 
