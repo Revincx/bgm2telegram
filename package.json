@@ -17,6 +17,6 @@
   },
   "scripts": {
     "build": "tsc",
-    "clean": "rm -rf api utils"
+    "clean": "rm -rf api/*.js utils/*.js .vercel/output" 
   }
 }
