@@ -16,6 +16,7 @@
     "grammy": "^1.15.3"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "clean": "rm -rf api utils"
   }
 }
