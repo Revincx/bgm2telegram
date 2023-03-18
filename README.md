@@ -12,7 +12,7 @@
 
 请下载版本号不小于 7.10.0 的 Bagumi APP 并在 `设置 / 其他 / Webhook` 页面中配置部署后的 Vercel 地址。
 
-地址格式：`https://<域名>/api/apphook`
+地址格式：`https://<域名>/api/apphook?key=<认证密钥>`
 
 使用 Telegram 的 [@BotFather](https://t.me/BotFather) 机器人自助创建 Bot 帐号，然后将 Bot 添加为要推送频道的管理员并给予发送消息权限。
 
@@ -20,8 +20,9 @@
 
 | 名称         | 必填 | 示例                            | 说明                                          |
 | ------------ | ---- | ------------------------------- | --------------------------------------------- |
-| BOT_TOKEN    | 是   | `12345678:ASDFGHJKSHWEUW`       | Telegram 机器人的 Bot Token。                 |
+| BOT_TOKEN    | 是   | `12345678:ASDFGHJKSHWEUW`       | Telegram 机器人的 Bot Token                   |
 | PUSH_CHANNEL | 是   | `@username` 或 `-1001234566778` | 要推送到的频道，支持 username 格式和 ID 格式  |
+| AUTH_KEY     | 是   | `ABC123`                        | 认证密钥，用来防止他人调用你的 Webhook 地址   |
 | NICKNAME     | 否   | `Revincx`                       | 你的昵称，不填写会默认使用 Bangumi 账户的昵称 |
 
 ### 一键部署

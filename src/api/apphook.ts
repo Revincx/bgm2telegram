@@ -7,7 +7,17 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   let webhook_body = req.body as WebHookCollection;
 
   if (req.method != "POST") {
-    return res.status(405).send("Method Not Allowed");
+    return res.status(405).send({
+      ok: false,
+      message: "Only accept POST request.",
+    })
+  }
+
+  if(req.query.key != process.env.AUTH_KEY) {
+    return res.status(401).send({
+      ok: false,
+      message: "Request Unauthorized."
+    })
   }
 
   if (webhook_body.type != "collection") {
