@@ -11,7 +11,7 @@ export function tagText(subject_type: SubjectType, nickname: string) {
         6: '$nickname看过的剧'
     }
 
-    return tag_format[subject_type].replace('$nickname', nickname)
+    return '#' + tag_format[subject_type].replace('$nickname', nickname)
 }
 
 export function subjectText(subject: Subject, type: CollectionType, nickname: string) {
