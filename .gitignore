@@ -1,0 +1,12 @@
+# Vercel Project Files
+.vercel
+
+# Node.js Modules
+node_modules
+
+# Build Output
+/api
+/utils
+
+# Git Ignore
+/.gitignore
