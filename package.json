@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "env-var": "^7.3.0",
-    "grammy": "^1.15.3"
+    "grammy": "^1.28.0"
   },
   "scripts": {
     "build": "tsc",
-    "clean": "rm -rf api/*.js utils/*.js .vercel/output" 
+    "clean": "rm -rf api/*.js utils/*.js .vercel/output"
   }
 }

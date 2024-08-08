@@ -68,7 +68,9 @@ export function genFullMessage(info: WebHookCollection) {
 
     if(env.NICKNAME) nickname = env.NICKNAME
 
-    let bgm_image = info.data.subject.image.replace('http://', 'https://').replace('cover/c', 'cover/l')
+    return `${tagText(info.data.subject.type, nickname)}\n${subjectText(info.data.subject, info.data.type, nickname)}`
+}
 
-    return `${tagText(info.data.subject.type, nickname)} <a href="${bgm_image}">　</a>\n${subjectText(info.data.subject, info.data.type, nickname)}`
+export function getBangumiImage(info: WebHookCollection) {
+    return info.data.subject.image.replace('http://', 'https://').replace('cover/c', 'cover/l')
 }
